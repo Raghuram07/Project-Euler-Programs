@@ -1,0 +1,32 @@
+class LargestPD
+{
+
+public static int isPD(int n)
+{
+String s=Integer.toString(n);
+int i=0;
+while(i<s.length()/2)
+{
+if(s.charAt(i)!=s.charAt(s.length()-i-1))
+return 0;
+i++;
+}
+return 1;
+}
+
+public static void main(String args[])
+{
+int n=999,m=999,max=0;
+for(int i=n;i>0;i--)
+{
+for(int j=m;j>0;j--)//here j>i can be kept to optimise cuz i=999 and j=998 and i=998 and j=999 will happen so to avoid these calc we can keed j>i or j=i.
+{
+if(max<i*j && isPD(i*j)==1)
+{
+max=i*j;
+}
+}
+}
+System.out.println(max);
+}
+}
