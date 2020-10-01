@@ -1,0 +1,32 @@
+import java.util.*;
+class SumofPrimes
+{
+public static boolean isprime(int n)
+{
+int count=0;
+for(int i=1;i<=Math.sqrt(n);i++)
+{
+if(n%i==0)
+count++;
+}
+if(count==1)
+return true;
+return false;
+}
+
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+long count=0;
+int n=sc.nextInt();
+for(int i=2;i<=n;i++)
+{
+//System.out.println(i);
+if(isprime(i))
+{
+count+=i;
+}
+}
+System.out.println(count);
+}
+}
